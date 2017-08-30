@@ -1,3 +1,9 @@
+GENERAL
+
+The default account needs to be unlocked or you need to specifiy with which account you will use to deploy. What I did was eliminate the other account that had no balance so that the node would default to the one i was already unlocking
+
+
+JS
 To read a file and save it to variable input
 
 fs = require('fs')
