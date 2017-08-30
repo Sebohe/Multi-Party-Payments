@@ -1,0 +1,9 @@
+To read a file and save it to variable input
+
+fs = require('fs')
+fs.readFile(file, 'utf8', function(err, data){if (err){return console.log(err);} input = data ;});
+
+
+TO View accounts in console
+
+web3.eth.getAccounts().then(console.log)
