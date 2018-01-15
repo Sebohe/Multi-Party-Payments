@@ -12,19 +12,39 @@ from web3 import Web3, HTTPProvider
 import json
 import os
 
-local_web3 = Web3(HTTPProvider(os.environ['NODE']))
+"""
+        os.environ['NODE'],
+        'http://localhost:8545'
+        ]
+""" 
 
-for k, account in enumerate(local_web3.eth.accounts):
-        print ("{}: {}".format(k, account))
+hosts = 
 
-print ('Select account: ', end='')
+for address in hosts:
+    print (address)
 
-accountSelected = int(input())
+    try:
+        w3 = Web3(HTTPProvider(address))
+        print (w3.eth.blockNumber)
+    except Exception as e:
+        print(e)
+        pass
 
-balance = local_web3.eth.getBalance(local_web3.eth.accounts[accountSelected])
 
-print(local_web3.fromWei(balance, 'ether'))
+print (w3.eth.accounts)
 
+
+if len(w3.eth.accounts) == 1:
+    accountSelected = 0
+else:
+    print ('Select account: ', end='')
+    accountSelected = int(input())
+
+
+balance = w3.eth.getBalance(w3.eth.accounts[accountSelected])
+
+print(w3.fromWei(balance, 'ether'))
+"""
 account = local_web3.eth.accounts[accountSelected]
 
 print ('Password:',end='')
@@ -37,3 +57,5 @@ myContract.abi = ABI
 myContract.bytecode = BYTECODE
 output = myContract.deploy()
 print(output)
+
+"""
